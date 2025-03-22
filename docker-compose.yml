@@ -10,7 +10,6 @@ services:
       - ./app:/var/www/app
     depends_on:
       - app
-    restart: always
 
   app:
     image: php:8.4-fpm
@@ -26,7 +25,6 @@ services:
   mariadb:
     image: mariadb:latest
     container_name: symfony_mariadb
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -40,7 +38,6 @@ services:
   phpmyadmin:
     image: phpmyadmin:latest
     container_name: symfony_phpmyadmin
-    restart: always
     environment:
       PMA_HOST: mariadb
       PMA_PORT: 3306
