@@ -39,8 +39,8 @@ services:
     image: phpmyadmin:latest
     container_name: symfony_phpmyadmin
     environment:
-      PMA_HOST: mariadb
-      PMA_PORT: 3306
+      PMA_HOST: ${DB_HOST}
+      PMA_PORT: ${DB_PORT}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "8081:80"
